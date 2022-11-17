@@ -4,8 +4,9 @@ const proContext = createContext(null);
 
 const ProductContext = ({children}) =>{
   const[products,setProducts] = useState({
-    data:[] , status:false
+    data:[] ,cart:[], status:false
   })
+  
   const[state,dispatch] = useReducer(productReducer,products);
   return(
   <proContext.Provider value={{state,setProducts,dispatch}}>{children}</proContext.Provider>

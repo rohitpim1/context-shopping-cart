@@ -51,7 +51,8 @@ transition:background 2s ease;
 `;
 
 const Navbar = () =>{
-  const state = useProduct((state)=>state);
+  const state = useProduct();
+ const length = state.state.cart.length;
   return(
     <Nav>
   <Link to="/" style={{textDecoration:"none"}}> <Heading>RoCommerce</Heading></Link>
@@ -62,7 +63,7 @@ const Navbar = () =>{
     </NavList>
     <NavIcon>
     <Link to="/Profile" style={{textDecoration:"none"}}>     <Icon><FaMale fontSize="1.4rem"/></Icon></Link>
-    <Link to="/Cart" style={{textDecoration:"none"}}>    <Icon ><FaCartPlus fontSize="1.4rem"/></Icon></Link>
+    <Link to="/Cart" style={{textDecoration:"none"}}>    <Icon ><FaCartPlus fontSize="1.4rem"/><span>{length}</span></Icon></Link>
 
     </NavIcon>
     </Nav>

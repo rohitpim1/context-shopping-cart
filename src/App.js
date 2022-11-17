@@ -7,6 +7,7 @@ import Cart from './pages/Cart'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Profile from './pages/Profile'
+import Product from './components/Product'
 export default function App() {
   return (
     <div>
@@ -17,7 +18,7 @@ export default function App() {
         <Route exact path="/About" element={<About/>}/>
         <Route exact path="/Profile" element={<Profile/>}/>
         <Route exact path="/Contact" element={<Contact/>}/>
-
+        <Route exact path="/products/product/:id" element={<Product/>}/> 
       </Routes>
     </div>
   );
