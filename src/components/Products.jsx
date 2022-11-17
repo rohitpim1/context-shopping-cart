@@ -92,7 +92,7 @@ const Products = () =>{
     <ProductContainer>
     {
       state.data[0]?.map((item)=>(
-    <Link to={`/products/product/${item.id}`}>
+    <Link to={`/products/product/${item.id}`} style={{textDecoration:"none"}}>
     <ProductList key={item.id}>
          <ProductImage src={item.thumbnail} alt="product image"/>
          <ProductBrand>{item.brand}</ProductBrand>

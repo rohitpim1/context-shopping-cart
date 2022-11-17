@@ -4,7 +4,7 @@ const proContext = createContext(null);
 
 const ProductContext = ({children}) =>{
   const[products,setProducts] = useState({
-    data:[] ,cart:[], status:false
+    data:[] ,cart:[], status:false,quantity:1
   })
   
   const[state,dispatch] = useReducer(productReducer,products);
