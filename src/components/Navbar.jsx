@@ -4,12 +4,20 @@ import { FaCartPlus,FaMale } from "react-icons/fa";
 import {Link} from 'react-router-dom';
 import {useProduct} from '../context/ProductContext'
 const Nav = styled.div`
+position:fixed;
+top:0;
+right:0;
+left:0;
+z-index:1;
+margin-bottom:50px;
 max-width:100%;
 height:60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+background:#ffff;
 box-shadow:1px 2px 2px grey;
+padding:0 50px;
 `;
 const Heading = styled.h2`
 padding-left:10px;

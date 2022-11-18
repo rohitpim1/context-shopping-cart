@@ -92,6 +92,7 @@ color:grey;
 const Product = () =>{
   const[size,setSize] = useState("");
   const[color,setColor] = useState("");
+  const[dis,setDis] = useState(false);
 
   const {id} = useParams();
   const Navigate = useNavigate();
@@ -99,6 +100,10 @@ const Product = () =>{
   const {state,setProducts,dispatch} = useProduct();
    const data = state.data[0]?.find((data)=>data.id == id);
 
+   const addToCart = () =>{
+dispatch({type:"Add_To_Cart",payload:{...data,quantity:1}})
+setDis(true);
+   }
  
   return(
     <ProductContainer>
@@ -123,7 +128,7 @@ const Product = () =>{
       <br></br>
       <br></br>
 
-      <ProductButton onClick={()=>dispatch({type:"Add_To_Cart",payload:data})}>Add To Cart</ProductButton>
+      <ProductButton onClick={addToCart} disabled={dis}>Add To Cart</ProductButton>
       <ProductBackButton onClick={()=>Navigate("/")}>continue shopping</ProductBackButton>
     </ProductInfo>
    </ProductItem>

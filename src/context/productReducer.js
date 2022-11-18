@@ -7,9 +7,11 @@ switch(action.type){
 
   case "Remove_From_Cart" : return {...state,cart:[...state.cart.filter((item)=>item.id !== action.payload)],status:true}
   
-  case "Add_Quantity" : return {...state,quantity:state.quantity + action.payload}
+  case "Add_Quantity" : 
+      console.log(action.payload);
+  return {...state,cart:[...state.cart.filter((item)=>(item.id === action.payload) ? item.quantity=item.quantity+1 : item.quantity )],status:true}
 
-  case "Sub_Quantity" : return {...state,quantity:state.quantity - action.payload}
+  case "Sub_Quantity" : return {...state,cart:[...state.cart.filter((item)=>(item.id === action.payload) ? item.quantity=item.quantity-1 : item.quantity )],status:true}
 
   default: return state;
 }

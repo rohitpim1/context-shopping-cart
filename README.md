@@ -1,3 +1,2 @@
 # context-shopping-cart
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-ah7vvi)
+Shopping cart build in context-api and useReducer

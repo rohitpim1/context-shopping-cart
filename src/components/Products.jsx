@@ -5,7 +5,7 @@ import {useProduct} from '../context/ProductContext'
 import {Link} from 'react-router-dom'
 
 const ProductContainer = styled.div`
-margin-top:20px;
+margin-top:100px;
 display:flex;
 justify-content:center;
 align-items:center;
