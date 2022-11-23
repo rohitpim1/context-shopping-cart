@@ -19,16 +19,16 @@ const Nav = styled.div`
   background: #ffff;
   box-shadow: 1px 2px 2px grey;
   padding: 0 50px;
-  
+  @media screen and (max-width: 768px) {
+    width:768px;
+  }
 `;
 const Heading = styled.h2`
   padding-left: 10px;
   color: blue;
   cursor: pointer;
   text-decoration: none;
-  @media screen and (max-width: 768px) {
-    color: yellow !important;
-  }
+  
 `;
 const NavList = styled.div`
 
@@ -48,7 +48,9 @@ const NavListItem = styled.a`
     color: black;
   }
 
-  
+  @media  (max-width: 768px) {
+    display:none;
+  }
 `;
 
 const NavIcon = styled.div`

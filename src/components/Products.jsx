@@ -3,6 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 import {useProduct} from '../context/ProductContext'
 import {Link} from 'react-router-dom'
+import Skeleton from 'react-loading-skeleton'
 
 const ProductContainer = styled.div`
 margin-top:100px;
@@ -11,6 +12,7 @@ justify-content:center;
 align-items:center;
 gap:30px;
 flex-wrap:wrap;
+
 
 
 `;
@@ -90,11 +92,14 @@ const Products = () =>{
   console.log(state.data);
   
   return(
+    <>
+    {
+      state.data ? 
     <ProductContainer>
     {
       state.data[0]?.map((item)=>(
-    <Link to={`/products/product/${item.id}`} style={{textDecoration:"none"}}>
-    <ProductList key={item.id}>
+    <Link to={`/products/product/${item.id}`} style={{textDecoration:"none"}} key={item.id}>
+    <ProductList >
          <ProductImage src={item.thumbnail} alt="product image"/>
          <ProductBrand>{item.brand}</ProductBrand>
          <ProductCategory>{item.category}</ProductCategory>
@@ -107,6 +112,12 @@ const Products = () =>{
       ))
     }
     </ProductContainer>
+    :
+    <ProductContainer>
+       <Skeleton />
+    </ProductContainer>
+}
+    </>
   )
 }
 
